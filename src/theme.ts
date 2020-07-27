@@ -24,7 +24,11 @@ export const theme = {
         "neutralPrimary": "#ffffff",
         "neutralWhite": "#f4f4f4",
         "backgroundWhite": "#f8f8f8",
-        "background": "#0D0208" // background
+        "background": "#0D0208", // background
+        "redSalsa": "#fd3a4a",
+        "iceberg":"#71a6d2",
+        "pistachio": "#93c572",
+        "cetaceanBlue":"#001440"
     },
 };
 
@@ -43,7 +47,6 @@ html {
 }
 
 body {
-    margin: 20px 0 0 30px;
     font-family: Sk-Modernist-Regular,monospace;
     letter-spacing: -0.030em;
     font-size: 1em;
