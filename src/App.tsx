@@ -7,19 +7,70 @@ import CollapsibleTrigger from "./components/CollapsibleTrigger";
 import SkillsPieChart from "./components/SkillsPieChart";
 
 const StyledDiv = styled.div`
+    color: ${theme.colors.themePrimary};
+    padding: 10px 0 10px 0;
+    margin: 0;
+    border-bottom: 2px solid;
+        border-right: 0.2px solid;
+        border-left: 0.2px solid;
+        border-top: 0.2px solid;
+
+`
+const StyledDivSecond = styled.div`
+    color: ${theme.colors.pistachio};
+    padding: 10px 0 10px 0;
+    margin: 0;
+    border-bottom: 2px solid;
+        border-right: 0.2px solid;
+        border-left: 0.2px solid;
+
+`
+const StyledDivThird = styled.div`
+    color: ${theme.colors.redSalsa};
+    padding: 10px 0 10px 0;
+    margin: 0;
+    border-bottom: 2px solid;
+        border-right: 0.2px solid;
+        border-left: 0.2px solid;
+
+`
+const StyledDivFourth = styled.div`
+    color: ${theme.colors.iceberg};
+    padding: 10px 0 10px 0;
+    margin: 0;
+    border-bottom: 2px solid;
+        border-right: 0.2px solid;
+        border-left: 0.2px solid;
+
+`
+const StyledDivFifth = styled.div`
+    color: ${theme.colors.cetaceanBlue};
+    padding: 10px 0 10px 0;
+    margin: 0;
+    border-bottom: 2px solid;
+    border-right: 0.2px solid;
+            border-left: 0.2px solid;
+
+`
+const StyledDivSixth = styled.div`
     color: ${theme.colors.themeDarkAlt};
     padding: 10px 0 10px 0;
     margin: 0;
     border-bottom: 2px solid;
+        border-right: 0.2px solid;
+        border-left: 0.2px solid;
+
 `
 
 const StyledP = styled.p`
 
   color: ${theme.colors.background};
+  padding: 5px;
   
 `
 const StyledDiv2 = styled.div`
   color: ${theme.colors.background};
+  padding: 3px;
 `
 
 
@@ -44,27 +95,34 @@ function App() {
                 <GlobalStyle/>
                 <Section>
                     <StyledDiv>
-                        <StyledP>Hola</StyledP>
+                        <StyledP>Nicolás Vega Terrazas </StyledP>
                     </StyledDiv>
-                    <StyledDiv>
-                        <StyledDiv2>Nicolás Vega Terrazas is a fullstack developer at the Bundesdruckerei in Berlin</StyledDiv2>
-                    </StyledDiv>
-                    <StyledDiv>
-                        <StyledDiv2>Currently he maintains a search-engine and a global indicators web-app,
-                            used to aid policy making decisions and crisis prevention</StyledDiv2>
-                    </StyledDiv>
-                    <StyledDiv>
-                        <StyledDiv2>Leads a frontend agile team of 3 developers
-                            to distribute a consistent and scalable design system across multiple projects in the company</StyledDiv2>
-                    </StyledDiv>
+                    <StyledDivSecond>
+                        <StyledDiv2>is a fullstack developer at the Bundesdruckerei in
+                            Berlin,</StyledDiv2>
+                    </StyledDivSecond>
+                    <StyledDivThird>
+                        <StyledDiv2>working on the company's search engine and global data dashboard,
+                            to aid policy making and crisis prevention</StyledDiv2>
+                    </StyledDivThird>
+                    <StyledDivFourth>
+                        <StyledDiv2>He leads an agile team of 3 frontend developers
+                            to distribute a consistent and scalable design system across multiple projects in the
+                            company</StyledDiv2>
+                    </StyledDivFourth>
                 </Section>
-                <Collapsible trigger={<CollapsibleTrigger title={"skills"}/>}>
-                    <SkillsPieChart/>
-                </Collapsible>
-                <Collapsible trigger={<CollapsibleTrigger title={"bio"}/>}>
-                    <p>Hola</p>
-                    <p>Hola</p>
-                </Collapsible>
+                <StyledDivFifth>
+                    <Collapsible trigger={<CollapsibleTrigger title={"skills"}/>}>
+                        <SkillsPieChart/>
+                    </Collapsible>
+                </StyledDivFifth>
+                <StyledDivSixth>
+                    <Collapsible trigger={<CollapsibleTrigger title={"bio"}/>}>
+                        <p>Hola</p>
+                        <p>Hola</p>
+                    </Collapsible>
+                </StyledDivSixth>
+
 
             </LayoutLeft>
         </>

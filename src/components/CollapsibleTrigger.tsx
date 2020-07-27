@@ -12,6 +12,7 @@ interface CollapsibleTriggerProps {
 const CollapsibleTitle = styled(Box)`
   font-family: Sk-Modernist-Bold,monospace;;
   color: ${theme.colors.neutralDarkerAlt};
+  padding-left: 20px;
 `
 
 
@@ -22,7 +23,7 @@ const CollapsibleTrigger:FC<CollapsibleTriggerProps> = ({title})=> {
         <CollapsibleTitle >
             {title}
         </CollapsibleTitle>
-        <Box ml={'auto'}>
+        <Box ml={'auto'} pr={2}>
             {
                 isExpanded &&
                 <img src={ArrowUp} alt={"Arrow up icon"}/>
