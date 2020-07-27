@@ -4,9 +4,9 @@ import {GlobalStyle, theme} from "./theme";
 import styled from "styled-components";
 import Collapsible from 'react-collapsible';
 import CollapsibleTrigger from "./components/CollapsibleTrigger";
-import SkillsPieChart from "./components/SkillsPieChart";
+import CareerTimeline from "./components/CareerTimeline";
 
-const StyledDiv = styled.div`
+const StyledDivTitlePrimaryGreen = styled.div`
     color: ${theme.colors.themePrimary};
     padding: 10px 0 10px 0;
     margin: 0;
@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
         border-top: 0.2px solid;
 
 `
-const StyledDivSecond = styled.div`
+const StyledDivPistachio = styled.div`
     color: ${theme.colors.pistachio};
     padding: 10px 0 10px 0;
     margin: 0;
@@ -63,7 +63,6 @@ const StyledDivSixth = styled.div`
 `
 
 const StyledP = styled.p`
-
   color: ${theme.colors.background};
   padding: 5px;
   
@@ -94,13 +93,14 @@ function App() {
             <LayoutLeft>
                 <GlobalStyle/>
                 <Section>
-                    <StyledDiv>
+                    <StyledDivTitlePrimaryGreen>
                         <StyledP>Nicolás Vega Terrazas </StyledP>
-                    </StyledDiv>
-                    <StyledDivSecond>
-                        <StyledDiv2>is a fullstack developer at the Bundesdruckerei in
-                            Berlin,</StyledDiv2>
-                    </StyledDivSecond>
+                    </StyledDivTitlePrimaryGreen>
+                    <StyledDivPistachio>
+                        <StyledDiv2>
+                            is a fullstack developer at the Bundesdruckerei in Berlin,
+                        </StyledDiv2>
+                    </StyledDivPistachio>
                     <StyledDivThird>
                         <StyledDiv2>working on the company's search engine and global data dashboard,
                             to aid policy making and crisis prevention</StyledDiv2>
@@ -112,8 +112,8 @@ function App() {
                     </StyledDivFourth>
                 </Section>
                 <StyledDivFifth>
-                    <Collapsible trigger={<CollapsibleTrigger title={"skills"}/>}>
-                        <SkillsPieChart/>
+                    <Collapsible trigger={<CollapsibleTrigger title={"career"}/>}>
+                        <CareerTimeline/>
                     </Collapsible>
                 </StyledDivFifth>
                 <StyledDivSixth>
