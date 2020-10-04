@@ -1,19 +1,20 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import './theme';
 import {GlobalStyle, theme} from "./theme";
 import styled from "styled-components";
 import Collapsible from 'react-collapsible';
 import CollapsibleTrigger from "./components/CollapsibleTrigger";
 import CareerTimeline from "./components/CareerTimeline";
+import {useMediaQuery} from "react-responsive";
 
 const StyledDivTitlePrimaryGreen = styled.div`
     color: ${theme.colors.themePrimary};
     padding: 10px 0 10px 0;
     margin: 0;
     border-bottom: 2px solid;
-        border-right: 0.2px solid;
-        border-left: 0.2px solid;
-        border-top: 0.2px solid;
+    border-right: 0.2px solid;
+    border-left: 0.2px solid;
+    border-top: 0.2px solid;
 
 `
 const StyledDivPistachio = styled.div`
@@ -21,8 +22,8 @@ const StyledDivPistachio = styled.div`
     padding: 10px 0 10px 0;
     margin: 0;
     border-bottom: 2px solid;
-        border-right: 0.2px solid;
-        border-left: 0.2px solid;
+    border-right: 0.2px solid;
+    border-left: 0.2px solid;
 
 `
 const StyledDivThird = styled.div`
@@ -30,8 +31,8 @@ const StyledDivThird = styled.div`
     padding: 10px 0 10px 0;
     margin: 0;
     border-bottom: 2px solid;
-        border-right: 0.2px solid;
-        border-left: 0.2px solid;
+    border-right: 0.2px solid;
+    border-left: 0.2px solid;
 
 `
 const StyledDivFourth = styled.div`
@@ -39,8 +40,8 @@ const StyledDivFourth = styled.div`
     padding: 10px 0 10px 0;
     margin: 0;
     border-bottom: 2px solid;
-        border-right: 0.2px solid;
-        border-left: 0.2px solid;
+    border-right: 0.2px solid;
+    border-left: 0.2px solid;
 
 `
 const StyledDivFifth = styled.div`
@@ -49,7 +50,7 @@ const StyledDivFifth = styled.div`
     margin: 0;
     border-bottom: 2px solid;
     border-right: 0.2px solid;
-            border-left: 0.2px solid;
+    border-left: 0.2px solid;
 
 `
 const StyledDivSixth = styled.div`
@@ -57,8 +58,8 @@ const StyledDivSixth = styled.div`
     padding: 10px 0 10px 0;
     margin: 0;
     border-bottom: 2px solid;
-        border-right: 0.2px solid;
-        border-left: 0.2px solid;
+    border-right: 0.2px solid;
+    border-left: 0.2px solid;
 
 `
 
@@ -72,45 +73,49 @@ const StyledDiv2 = styled.div`
   padding: 3px;
 `
 
-
-const LayoutLeft = styled.main`
-    max-width: 350px;
-    float: left;
-    margin-bottom: 5em;
-    margin-top: 20px;
-    margin-left: 20px;
-
-`
-
-const Section = styled.section`
-    display: block;
-`
-
+interface RespWrapperProps {
+    children: ReactNode;
+}
 
 function App() {
+    const Desktop = ({ children }:RespWrapperProps) => {
+        const isDesktop = useMediaQuery({ minWidth: 992 })
+        return isDesktop ? children : null
+    }
+    const Tablet = ({ children }:RespWrapperProps) => {
+        const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
+        return isTablet ? children : null
+    }
+    const Mobile = ({ children }:RespWrapperProps) => {
+        const isMobile = useMediaQuery({ maxWidth: 767 })
+        return isMobile ? children : null
+    }
+    const Default = ({ children }:RespWrapperProps) => {
+        const isNotMobile = useMediaQuery({ minWidth: 768 })
+        return isNotMobile ? children : null
+    }
+
+
     return (
-        <>
-            <LayoutLeft>
+            <div style={{maxWidth:350}}>
                 <GlobalStyle/>
-                <Section>
-                    <StyledDivTitlePrimaryGreen>
-                        <StyledP>Nicolás Vega Terrazas </StyledP>
-                    </StyledDivTitlePrimaryGreen>
-                    <StyledDivPistachio>
-                        <StyledDiv2>
-                            is a fullstack developer at the Bundesdruckerei in Berlin,
-                        </StyledDiv2>
-                    </StyledDivPistachio>
-                    <StyledDivThird>
-                        <StyledDiv2>working on the company's search engine and global data dashboard,
-                            to aid policy making and crisis prevention</StyledDiv2>
-                    </StyledDivThird>
-                    <StyledDivFourth>
-                        <StyledDiv2>He leads an agile team of 3 frontend developers
-                            to distribute a consistent and scalable design system across multiple projects in the
-                            company</StyledDiv2>
-                    </StyledDivFourth>
-                </Section>
+                <StyledDivTitlePrimaryGreen>
+                    <StyledP>Nicolás Vega Terrazas </StyledP>
+                </StyledDivTitlePrimaryGreen>
+                <StyledDivPistachio>
+                    <StyledDiv2>
+                        is a fullstack developer at the Bundesdruckerei in Berlin,
+                    </StyledDiv2>
+                </StyledDivPistachio>
+                <StyledDivThird>
+                    <StyledDiv2>working on the company's search engine and global data dashboard,
+                        to aid policy making and crisis prevention</StyledDiv2>
+                </StyledDivThird>
+                <StyledDivFourth>
+                    <StyledDiv2>He leads an agile team of 3 frontend developers
+                        to distribute a consistent and scalable design system across multiple projects in the
+                        company</StyledDiv2>
+                </StyledDivFourth>
                 <StyledDivFifth>
                     <Collapsible trigger={<CollapsibleTrigger title={"career"}/>}>
                         <CareerTimeline/>
@@ -122,10 +127,7 @@ function App() {
                         <p>Hola</p>
                     </Collapsible>
                 </StyledDivSixth>
-
-
-            </LayoutLeft>
-        </>
+            </div>
     );
 }
 

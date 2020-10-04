@@ -14,10 +14,11 @@
     "react-collapsible": "^2.8.0",
     "react-dom": "^16.13.1",
     "react-event-timeline": "^1.6.3",
+    "react-responsive": "^8.1.0",
     "react-scripts": "3.4.1",
     "rebass": "^4.0.7",
     "recharts": "^1.8.5",
-    "styled-components": "^5.1.1",
+    "styled-components": "^5.2.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -42,8 +43,9 @@
     ]
   },
   "devDependencies": {
+    "@types/react-responsive": "^8.0.2",
     "@types/rebass": "^4.0.6",
     "@types/recharts": "^1.8.14",
-    "@types/styled-components": "^5.1.1"
+    "@types/styled-components": "^5.1.3"
   }
 }
